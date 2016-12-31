@@ -59,7 +59,7 @@ Glip SDK &copy; 2016 by John Wang
  [coverage-status-link]: https://coveralls.io/r/ringcentral-ruby/glip-sdk-ruby?branch=master
  [dependency-status-svg]: https://gemnasium.com/ringcentral-ruby/glip-sdk-ruby.svg
  [dependency-status-link]: https://gemnasium.com/ringcentral-ruby/glip-sdk-ruby
- [codacy-svg]: https://api.codacy.com/project/badge/Grade/4792fe45b56b4841a7e6099c316ac0f8
+ [codacy-svg]: https://api.codacy.com/project/badge/Grade/eb469b5958d04fd188c37a999ac3620d
  [codacy-link]: https://www.codacy.com/app/ringcentral-ruby/glip-sdk-ruby
  [codeclimate-status-svg]: https://codeclimate.com/github/ringcentral-ruby/glip-sdk-ruby/badges/gpa.svg
  [codeclimate-status-link]: https://codeclimate.com/github/ringcentral-ruby/glip-sdk-ruby
