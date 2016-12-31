@@ -1,5 +1,3 @@
-require 'glip_sdk/rest'
-
 module GlipSdk
   VERSION = '0.0.1'
 
