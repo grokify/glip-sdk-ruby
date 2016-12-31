@@ -67,7 +67,7 @@ Glip SDK &copy; 2016 by John Wang
  [codeclimate-status-link]: https://codeclimate.com/github/ringcentral-ruby/glip-sdk-ruby
  [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/ringcentral-ruby/glip-sdk-ruby/badges/quality-score.png?b=master
  [scrutinizer-status-link]: https://scrutinizer-ci.com/g/ringcentral-ruby/glip-sdk-ruby/?branch=master
- [docs-readthedocs-svg]: https://img.shields.io/badge/docs-readthedocs-blue.svg
+ [docs-rubydoc-svg]: https://img.shields.io/badge/docs-rubydoc-blue.svg
  [docs-rubydoc-link]: http://www.rubydoc.info/gems/glip_sdk/
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
  [license-link]: https://github.com/ringcentral-ruby/glip-sdk-ruby/blob/master/LICENSE.md
