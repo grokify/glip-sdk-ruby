@@ -13,6 +13,8 @@ Glip SDK for Ruby
 
 Glip SDK for Glip collaboration (https://glip.com).
 
+More documentation will be added soon. For now see the example and SDK code.
+
 ## Usage
 
 ```ruby
