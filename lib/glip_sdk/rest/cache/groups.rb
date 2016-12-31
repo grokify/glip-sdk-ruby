@@ -1,4 +1,4 @@
-module Glip::SDK::Cache
+module GlipSdk::REST::Cache
   class Groups
     attr_accessor :groups
     attr_accessor :groups_name2id

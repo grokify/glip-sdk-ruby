@@ -1,4 +1,4 @@
-lib = 'glip-sdk'
+lib = 'glip_sdk'
 lib_file = File.expand_path("../lib/#{lib}.rb", __FILE__)
 File.read(lib_file) =~ /\bVERSION\s*=\s*["'](.+?)["']/
 version = $1
@@ -7,8 +7,8 @@ version = $1
 Gem::Specification.new do |s|
   s.name        = lib
   s.version     = version
-  s.date        = '2016-12-14'
-  s.summary     = 'Glip chat client for Ruby'
+  s.date        = '2016-12-31'
+  s.summary     = 'Glip SDK client for Ruby'
   s.description = 'A Ruby SDK for the Glip collaboration solution'
   s.authors     = ['John Wang']
   s.email       = 'johncwang@gmail.com'

@@ -1,4 +1,7 @@
 _*
-coverage
+.DS_Store
+.env
 Gemfile.lock
+coverage
+pubnub.log
 *.gem

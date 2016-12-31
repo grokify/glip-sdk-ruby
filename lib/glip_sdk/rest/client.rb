@@ -1,18 +1,30 @@
-module Glip::SDK
-  class Client
-    attr_accessor :api
-    attr_accessor :groups
+module GlipSdk
+  module REST
+    class Client
+      attr_accessor :api
+      attr_accessor :logger
+      attr_accessor :groups
+      attr_accessor :persons
+      attr_accessor :posts
 
-    def initialize(rc_client)
-      @api = rc_client
+      def initialize(rc_sdk)
+        @api = rc_sdk
+        @logger = @api.config.logger
+        @groups = GlipSdk::REST::Groups.new @api
+        @persons = GlipSdk::REST::Persons.new @api
+        @posts = GlipSdk::REST::Posts.new @api
+      end
+
+      def load_groups
+        res = @groups.get.http.get 'glip/groups'
+        @groups_cache = GlipSdk::REST::Cache::Groups.new
+        @groups.load_groups(res.body['records'])
+      end
     end
+  end
+end
 
-    def load_groups
-      res = @api.http.get 'glip/groups'
-      @groups = Glip::SDK::Cache::Groups.new
-      @groups.load_groups(res.body['records'])
-    end
-
+=begin
     def post_message(opts = {})
       unless opts.key? :text
         fail "Text must be provided to post message"
@@ -39,5 +51,4 @@ module Glip::SDK
       ])
       @subscription.add_observer observer
     end
-  end
-end
+=end
