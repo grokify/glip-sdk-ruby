@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = version
   s.date        = '2016-12-31'
   s.summary     = 'Glip SDK client for Ruby'
-  s.description = 'A Ruby SDK for the Glip collaboration solution'
+  s.description = 'A Ruby SDK for the Glip collaboration solution (https://glip.com)'
   s.authors     = ['John Wang']
   s.email       = 'johncwang@gmail.com'
   s.homepage    = 'https://github.com/grokify/'
