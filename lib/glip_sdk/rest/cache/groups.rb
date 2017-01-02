@@ -12,7 +12,11 @@ module GlipSdk::REST::Cache
     end
 
     def load_groups(groups)
-      groups.each { |g| load_group g }
+      if groups.is_a? Array
+        groups.each { |g| load_group g }
+      elsif groups.is_a? Hash
+        groups.each { |_, g| load_group g}
+      end
     end
 
     def load_group(group)
@@ -29,9 +33,25 @@ module GlipSdk::REST::Cache
       end
     end
 
+    def id_by_name(name)
+      group = by_name name
+      group.nil? ? nil : group['id']
+    end
+
+    def by_name(name)
+      team = team_by_name name
+      return team unless team.nil?
+      group_by_name name
+    end
+
     def team_by_name(name)
-      # Innovation & Ops Extended Staff
-      @teams[name.to_s]
+      team_id = @teams_name2id[name.to_s]
+      team_id ? @teams[team_id] : nil
+    end
+
+    def group_by_name(name)
+      group_id = @groups_name2id[name.to_s]
+      group_id ? @groups[group_id] : nil
     end
   end
 end

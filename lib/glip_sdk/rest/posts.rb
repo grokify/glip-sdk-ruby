@@ -1,6 +1,10 @@
+require 'multi_json'
+
 module GlipSdk
   module REST
     class Posts
+      attr_accessor :groups_cache
+
       def initialize(rc_sdk)
         @api = rc_sdk
       end
@@ -14,8 +18,14 @@ module GlipSdk
           raise ArgumentError, "Group Id or Group Name must be provided"
         end
 
-        group_id = (opts.key?(:groupName) && !opts.key?(:groupId)) \
-          ? @groups.groups_name2id[opts[:groupName]] : opts[:groupId]
+        group_id = opts[:groupId]
+
+        if group_id.nil? && @groups_cache && opts.key?(:groupName)
+          group_id = @groups_cache.id_by_name(opts[:groupName])
+        end
+
+        params = { groupId: group_id, text: opts[:text] }
+        puts MultiJson.encode params
 
         @api.http.post do |req|
           req.url 'glip/posts'

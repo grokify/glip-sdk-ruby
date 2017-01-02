@@ -23,33 +23,16 @@ end
 
 glip = GlipSdk::REST::Client.new rc
 
-def all_groups(glip, params = {})
-  groups = []
-  get_next = true
-  while get_next == true
-    res = glip.groups.get params
-    groups.concat(res.body['records']) if res.body['records'].length > 0
-
-    if res.body.key?('navigation') && res.body['navigation'].key?('prevPageToken')
-      params['pageToken'] = res.body['navigation']['prevPageToken']
-      glip.logger.info "PrevPageToken [#{res.body['navigation']['prevPageToken']}]"
-    else
-      get_next = false
-    end
-  end
-  return groups
-end
-
 # Get all groups and teams
-groups = all_groups glip
+groups = glip.groups.all_groups
 glip.logger.info "#{groups.length} groups/teams were found."
 
 # Get all groups
-groups = all_groups glip, type: 'Group'
+groups = glip.groups.all_groups type: 'Group'
 glip.logger.info "#{groups.length} groups were found."
 
 # Get all teams
-teams = all_groups glip, type: 'Team'
+teams = glip.groups.all_groups type: 'Team'
 glip.logger.info "#{teams.length} teams were found."
 
 # Get one team
@@ -61,18 +44,18 @@ else
 end
 
 # Subscribe to group events including: GroupAdded, GroupChanged and GroupRemoved
-class MyObserver
+class MyObserverGroups
   def initialize(logger)
     @logger = logger
   end
 
   def update(message)
-    @logger.info 'Subscription Message Received'
+    @logger.info 'Subscription Group Message Received'
     @logger.info MultiJson.encode(message)
   end
 end
 
-glip.groups.observe MyObserver.new(glip.logger)
+glip.groups.observe MyObserverGroups.new(glip.logger)
 
 glip.logger.info("Hit any key to end")
 
