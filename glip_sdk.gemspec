@@ -7,7 +7,7 @@ version = $1
 Gem::Specification.new do |s|
   s.name        = lib
   s.version     = version
-  s.date        = '2016-12-31'
+  s.date        = '2017-01-01'
   s.summary     = 'Glip SDK client for Ruby'
   s.description = 'A Ruby SDK for the Glip collaboration solution (https://glip.com)'
   s.authors     = ['John Wang']

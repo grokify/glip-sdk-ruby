@@ -49,7 +49,7 @@ Project Repo
 
 Glip SDK is available under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
-Glip SDK &copy; 2016 by John Wang
+Glip SDK &copy; 2016-2017 by John Wang
 
  [gem-version-svg]: https://badge.fury.io/rb/glip_sdk.svg
  [gem-version-link]: http://badge.fury.io/rb/glip_sdk
