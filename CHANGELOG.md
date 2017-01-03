@@ -1,5 +1,7 @@
 CHANGELOG
 ---------
+- **2017-01-03**: 0.0.4
+  - Minor style update
 - **2017-01-01**: 0.0.3
   - Add get all groups
   - Support Ruby 2.4.0

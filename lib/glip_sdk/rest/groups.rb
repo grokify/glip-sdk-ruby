@@ -24,7 +24,7 @@ module GlipSdk
       def all_groups(params = {})
         groups = []
         get_next = true
-        while get_next == true
+        while get_next
           res = get params
           groups.concat(res.body['records']) if res.body['records'].length > 0
 
@@ -35,7 +35,7 @@ module GlipSdk
             get_next = false
           end
         end
-        return groups
+        groups
       end
     end
   end

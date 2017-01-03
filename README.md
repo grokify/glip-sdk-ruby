@@ -20,7 +20,25 @@ More documentation will be added soon. For now see the example and SDK code.
 ```ruby
 rc_sdk = RingCentralSdk::REST::Client.new [...]
 glip = GlipSdk::REST::Client.new rc_sdk
-res = glip.posts.post group_id: '12345', text: 'Hi there!'
+
+# For HTTP calls, params are the same as REST API, e.g. camelCase
+res = glip.posts.post groupId: '12345', text: 'Hi there!'
+
+# Get all groups will successfully call `prevPageToken` as provided
+# All params can be provided:
+groups = glip.groups.all_groups
+groups = glip.groups.all_groups type: 'Group'
+groups = glip.groups.all_groups type: 'Team'
+
+# Subscribe for updates
+class MyObserver
+  def update(message)
+    puts 'received message'
+  end
+end
+
+glip.groups.observer MyObserver.new
+glip.posts.observer MyObserver.new
 ```
 
 ## Example Scripts
