@@ -29,9 +29,9 @@ groups = glip.groups.get                      # => Faraday::Response
 groups = glip.groups.get groupId: 12345       # => Faraday::Response
 
 # Get all groups will continue call `prevPageToken` as provided
-groups = glip.groups.all_groups               # => []Group
-groups = glip.groups.all_groups type: 'Group' # => []Group (type == 'Group')
-groups = glip.groups.all_groups type: 'Team'  # => []Group (type == 'Team')
+groups = glip.groups.all_groups               # => Array group hash
+groups = glip.groups.all_groups type: 'Group' # => ..where type == 'Group'
+groups = glip.groups.all_groups type: 'Team'  # => ..where type == 'Team'
 
 # Subscribe for updates
 class MyObserver
