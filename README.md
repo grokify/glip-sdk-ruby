@@ -24,11 +24,14 @@ glip = GlipSdk::REST::Client.new rc_sdk
 # For HTTP calls, params are the same as REST API, e.g. camelCase
 res = glip.posts.post groupId: '12345', text: 'Hi there!'
 
-# Get all groups will successfully call `prevPageToken` as provided
 # All params can be provided:
-groups = glip.groups.all_groups
-groups = glip.groups.all_groups type: 'Group'
-groups = glip.groups.all_groups type: 'Team'
+groups = glip.groups.get                      # => Faraday::Response
+groups = glip.groups.get groupId: 12345       # => Faraday::Response
+
+# Get all groups will continue call `prevPageToken` as provided
+groups = glip.groups.all_groups               # => []Group
+groups = glip.groups.all_groups type: 'Group' # => []Group (type == 'Group')
+groups = glip.groups.all_groups type: 'Team'  # => []Group (type == 'Team')
 
 # Subscribe for updates
 class MyObserver
@@ -37,8 +40,8 @@ class MyObserver
   end
 end
 
-glip.groups.observer MyObserver.new
-glip.posts.observer MyObserver.new
+glip.groups.observe MyObserver.new
+glip.posts.observe MyObserver.new
 ```
 
 ## Example Scripts
