@@ -1,5 +1,5 @@
 module GlipSdk
-  VERSION = '0.0.4'
+  VERSION = '0.0.5'.freeze
 
   autoload :REST, 'glip_sdk/rest'
 

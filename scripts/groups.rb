@@ -9,7 +9,7 @@ require 'glip_sdk'
 Dotenv.load
 
 rc = RingCentralSdk::REST::Client.new do |config|
-  config.server_url = RingCentralSdk::RC_SERVER_PRODUCTION
+  config.server_url = ENV['RC_SERVER_URL']
   config.app_key = ENV['RC_APP_KEY']
   config.app_secret = ENV['RC_APP_SECRET']
 

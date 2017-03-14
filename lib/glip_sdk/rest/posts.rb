@@ -7,6 +7,7 @@ module GlipSdk
 
       def initialize(rc_sdk)
         @api = rc_sdk
+        @logger_prefix = " -- #{self.class.name}: "
       end
 
       def post(opts = {})
@@ -25,13 +26,21 @@ module GlipSdk
         end
 
         params = { groupId: group_id, text: opts[:text] }
-        puts MultiJson.encode params
 
-        @api.http.post do |req|
+        res = @api.http.post do |req|
           req.url 'glip/posts'
           req.headers['Content-Type'] = 'application/json'
           req.body = { groupId: group_id, text: opts[:text] }
         end
+
+        if res.status >= 400
+          @api.config.logger.warn("#{@logger_prefix}Glip API Response Status #{res.status}")
+          @api.config.logger.warn("#{@logger_prefix}Response Body: #{MultiJson.encode(res.body)}")
+        else
+          @api.config.logger.info("#{@logger_prefix}Glip API Response Status #{res.status}")
+        end
+
+        res
       end
 
       def get(opts = {})

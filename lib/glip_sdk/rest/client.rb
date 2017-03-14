@@ -15,6 +15,7 @@ module GlipSdk
       def initialize(rc_sdk)
         @api = rc_sdk
         @logger = @api.config.logger
+        puts ">>>\nGLIP_SCK_LOGGER_NAME [#{@api.config.logger.class.name}]\n<<<\n"
 
         @groups_cache = GlipSdk::REST::Cache::Groups.new
 
