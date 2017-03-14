@@ -1,5 +1,7 @@
 CHANGELOG
 ---------
+- **2017-03-14**: 0.0.5
+  - Add create post logging
 - **2017-01-03**: 0.0.4
   - Minor style update
 - **2017-01-01**: 0.0.3
