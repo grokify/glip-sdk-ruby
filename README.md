@@ -10,6 +10,7 @@ Glip SDK for Ruby
 [![Downloads][downloads-svg]][downloads-url]
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-url]
 [![License][license-svg]][license-url]
+[![Chat][chat-svg]][chat-url]
 
 Glip SDK for Glip collaboration (https://glip.com).
 
