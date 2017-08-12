@@ -10,6 +10,7 @@ Glip SDK for Ruby
 [![Downloads][downloads-svg]][downloads-url]
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-url]
 [![License][license-svg]][license-url]
+[![Stack Overflow][stackoverflow-svg]][stackoverflow-url]
 [![Chat][chat-svg]][chat-url]
 
 Glip SDK for Glip collaboration (https://glip.com).
@@ -95,3 +96,6 @@ Glip SDK &copy; 2016-2017 by John Wang
  [license-url]: https://github.com/ringcentral-ruby/glip-sdk-ruby/blob/master/LICENSE.md
  [chat-svg]: https://img.shields.io/badge/chat-on%20glip-orange.svg
  [chat-url]: https://glipped.herokuapp.com/
+ [stackoverflow-svg]: https://img.shields.io/badge/Stack%20Overflow-glip-orange.svg
+ [stackoverflow-url]: https://stackoverflow.com/questions/tagged/glip
+ 
