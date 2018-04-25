@@ -56,7 +56,7 @@ module GlipSdk
 
       def observe(observer)
         @subscription = @api.create_subscription()
-        @subscription.subscribe(['/restapi/v1.0/account/~/extension/~/glip/posts'])
+        @subscription.subscribe(['/restapi/v1.0/glip/posts'])
         @subscription.add_observer observer
       end
     end
